@@ -1,0 +1,78 @@
+[2025-07-23 13:04:41,201] INFO - Starting embedding extraction from folder: /home/ashisig/Research/Data/HAA500/video/
+[2025-07-23 13:04:41,297] INFO - Found 10000 video files.
+[2025-07-23 13:08:52,887] INFO - Starting embedding extraction from folder: /home/ashisig/Research/Data/HAA500/video/
+[2025-07-23 13:08:52,904] INFO - Found 10000 video files.
+[2025-07-23 14:04:52,482] INFO - Done! Successfully processed 9773/10000 videos.
+[2025-07-23 14:04:52,482] INFO - Total time taken: 3359.60 seconds.
+[2025-07-24 08:26:12,256] INFO - Starting embedding extraction from folder: /home/ashisig/Research/Data/HAA500/video/
+[2025-07-24 08:26:12,274] INFO - Found 10000 video files.
+[2025-07-24 09:17:35,934] INFO - Done! Successfully processed 9773/10000 videos.
+[2025-07-24 09:17:35,934] INFO - Total time taken: 3083.68 seconds.
+[2025-07-24 11:36:31,047] INFO - Starting embedding extraction from folder: /home/ashisig/Research/Data/HAA500/video/
+[2025-07-24 11:36:31,067] INFO - Found 10000 video files.
+[2025-07-24 12:28:43,505] INFO - Done! Successfully processed 9773/10000 videos.
+[2025-07-24 12:28:43,505] INFO - Total time taken: 3132.46 seconds.
+[2025-07-24 12:29:11,777] INFO - Starting embedding extraction from folder: /home/ashisig/Research/Data/HAA500/video/
+[2025-07-24 12:29:11,794] INFO - Found 10000 video files.
+[2025-07-24 13:21:18,813] INFO - Done! Successfully processed 9773/10000 videos.
+[2025-07-24 13:21:18,814] INFO - Total time taken: 3127.04 seconds.
+[2025-07-25 08:17:00,918] INFO - Starting embedding extraction from folder: /home/ashisig/Research/Data/HAA500/video/
+[2025-07-25 08:18:10,316] INFO - Starting embedding extraction from folder: /home/ashisig/Research/Data/HAA500/video/
+[2025-07-25 08:20:45,759] INFO - Starting embedding extraction from folder: /home/ashisig/Research/Data/HAA500/video/
+[2025-07-25 08:21:14,059] INFO - Starting embedding extraction from folder: /home/ashisig/Research/Data/HAA500/video/
+[2025-07-25 08:21:14,085] INFO - Found 227 video files.
+[2025-07-25 08:21:33,784] INFO - Done! Successfully processed 0/227 videos.
+[2025-07-25 08:21:33,785] INFO - Total time taken: 19.73 seconds.
+[2025-07-25 08:22:12,722] INFO - Starting embedding extraction from folder: /home/ashisig/Research/Data/HAA500/video/
+[2025-07-25 08:22:17,018] INFO - Found 227 video files.
+[2025-07-25 08:25:39,532] INFO - Starting embedding extraction from folder: /home/ashisig/Research/Data/HAA500/video/
+[2025-07-25 08:25:39,555] INFO - Found 227 video files.
+[2025-07-25 08:25:59,142] INFO - Done! Successfully processed 0/227 videos.
+[2025-07-25 08:25:59,142] INFO - Total time taken: 19.61 seconds.
+[2025-07-25 08:28:29,985] INFO - Starting embedding extraction from folder: /home/ashisig/Research/Data/HAA500/video/
+[2025-07-25 08:28:30,009] INFO - Found 227 video files.
+[2025-07-25 08:28:35,235] ERROR - Batch processing error: Unable to create tensor, you should probably activate padding with 'padding=True' to have batched tensors with the same length.
+[2025-07-25 08:28:37,779] ERROR - Batch processing error: Unable to create tensor, you should probably activate padding with 'padding=True' to have batched tensors with the same length.
+[2025-07-25 08:28:40,244] ERROR - Batch processing error: Unable to create tensor, you should probably activate padding with 'padding=True' to have batched tensors with the same length.
+[2025-07-25 08:28:42,450] ERROR - Batch processing error: Unable to create tensor, you should probably activate padding with 'padding=True' to have batched tensors with the same length.
+[2025-07-25 08:28:44,585] ERROR - Batch processing error: Unable to create tensor, you should probably activate padding with 'padding=True' to have batched tensors with the same length.
+[2025-07-25 08:28:46,705] ERROR - Batch processing error: Unable to create tensor, you should probably activate padding with 'padding=True' to have batched tensors with the same length.
+[2025-07-25 08:28:48,610] ERROR - Batch processing error: Unable to create tensor, you should probably activate padding with 'padding=True' to have batched tensors with the same length.
+[2025-07-25 08:28:50,874] ERROR - Batch processing error: Unable to create tensor, you should probably activate padding with 'padding=True' to have batched tensors with the same length.
+[2025-07-25 08:28:52,812] ERROR - Batch processing error: Unable to create tensor, you should probably activate padding with 'padding=True' to have batched tensors with the same length.
+[2025-07-25 08:28:54,575] ERROR - Batch processing error: Unable to create tensor, you should probably activate padding with 'padding=True' to have batched tensors with the same length.
+[2025-07-25 08:28:57,094] ERROR - Batch processing error: Unable to create tensor, you should probably activate padding with 'padding=True' to have batched tensors with the same length.
+[2025-07-25 08:28:59,567] ERROR - Batch processing error: Unable to create tensor, you should probably activate padding with 'padding=True' to have batched tensors with the same length.
+[2025-07-25 08:29:01,719] ERROR - Batch processing error: Unable to create tensor, you should probably activate padding with 'padding=True' to have batched tensors with the same length.
+[2025-07-25 08:29:04,207] ERROR - Batch processing error: Unable to create tensor, you should probably activate padding with 'padding=True' to have batched tensors with the same length.
+[2025-07-25 08:29:04,751] ERROR - Batch processing error: Unable to create tensor, you should probably activate padding with 'padding=True' to have batched tensors with the same length.
+[2025-07-25 08:29:04,752] INFO - Done! Successfully processed 0/227 videos.
+[2025-07-25 08:29:04,752] INFO - Total time taken: 34.77 seconds.
+[2025-07-25 08:38:14,128] INFO - Starting embedding extraction from folder: /home/ashisig/Research/Data/HAA500/video/
+[2025-07-25 08:38:14,151] INFO - Found 227 video files.
+[2025-07-25 08:39:32,053] INFO - Done! Successfully processed 227/227 videos.
+[2025-07-25 08:39:32,053] INFO - Total time taken: 77.93 seconds.
+[2025-07-25 10:58:41,504] INFO - Starting embedding extraction from folder: /home/ashisig/Research/Data/HAA500/video/
+[2025-07-25 10:58:41,522] INFO - Found 10000 video files.
+[2025-07-25 12:20:24,362] INFO - Done! Successfully processed 10000/10000 videos.
+[2025-07-25 12:20:24,363] INFO - Total time taken: 4902.86 seconds.
+[2025-07-25 12:49:56,065] INFO - Starting embedding extraction from folder: /home/ashisig/Research/Data/HAA500/video/
+[2025-07-25 12:49:56,152] INFO - Found 10000 video files.
+[2025-07-25 12:50:00,666] ERROR - Error loading video /home/ashisig/Research/Data/HAA500/video/baseball_catch_flyball/baseball_catch_flyball_003.mp4: module 'av' has no attribute 'AVError'
+[2025-07-25 12:50:02,426] ERROR - Error loading video /home/ashisig/Research/Data/HAA500/video/using_typewriter/using_typewriter_001.mp4: module 'av' has no attribute 'AVError'
+[2025-07-25 12:50:03,313] ERROR - Error loading video /home/ashisig/Research/Data/HAA500/video/using_typewriter/using_typewriter_003.mp4: module 'av' has no attribute 'AVError'
+[2025-07-25 12:50:03,514] ERROR - Error loading video /home/ashisig/Research/Data/HAA500/video/using_typewriter/using_typewriter_010.mp4: module 'av' has no attribute 'AVError'
+[2025-07-25 12:50:48,961] INFO - Starting embedding extraction from folder: /home/ashisig/Research/Data/HAA500/video/
+[2025-07-25 12:50:48,982] INFO - Found 10000 video files.
+[2025-07-25 12:50:58,007] ERROR - Batch processing error: The size of tensor a (784) must match the size of tensor b (1568) at non-singleton dimension 1
+[2025-07-25 12:51:08,809] ERROR - Batch processing error: The size of tensor a (784) must match the size of tensor b (1568) at non-singleton dimension 1
+[2025-07-25 12:51:18,529] ERROR - Batch processing error: The size of tensor a (784) must match the size of tensor b (1568) at non-singleton dimension 1
+[2025-07-25 12:51:29,815] ERROR - Batch processing error: The size of tensor a (784) must match the size of tensor b (1568) at non-singleton dimension 1
+[2025-07-25 12:51:39,005] ERROR - Batch processing error: The size of tensor a (784) must match the size of tensor b (1568) at non-singleton dimension 1
+[2025-07-25 12:51:49,152] ERROR - Batch processing error: The size of tensor a (784) must match the size of tensor b (1568) at non-singleton dimension 1
+[2025-07-25 12:51:53,408] ERROR - Error loading video /home/ashisig/Research/Data/HAA500/video/gym_squat/gym_squat_013.mp4: module 'av' has no attribute 'AVError'
+[2025-07-25 12:56:29,822] INFO - Starting embedding extraction from folder: /home/ashisig/Research/Data/HAA500/video/
+[2025-07-25 12:56:45,497] INFO - Found 10000 video files.
+[2025-07-25 13:00:02,815] INFO - Starting embedding extraction from folder: /home/ashisig/Research/Data/HAA500/video/
+[2025-07-25 13:00:08,673] INFO - Found 10000 video files.
+[2025-07-25 13:01:42,953] ERROR - Batch processing error: The size of tensor a (784) must match the size of tensor b (1568) at non-singleton dimension 1

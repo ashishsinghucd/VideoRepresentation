@@ -1,0 +1,4 @@
+[2025-07-25 08:48:36,832] INFO - Starting embedding extraction from folder: /home/ashisig/Research/Data/Diving48/videos/
+[2025-07-25 08:48:36,859] INFO - Found 18404 video files.
+[2025-07-25 10:27:17,204] INFO - Done! Successfully processed 18404/18404 videos.
+[2025-07-25 10:27:17,204] INFO - Total time taken: 5920.37 seconds.
