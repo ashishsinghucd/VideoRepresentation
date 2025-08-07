@@ -26,13 +26,13 @@ def load_json_split(json_path):
 def load_data_from_json(split_data, embedding_folder):
     X, y = [], []
     for vid_name, label in split_data:
-        file_path = os.path.join(embedding_folder, vid_name + '.pt')
+        file_path = os.path.join(embedding_folder, vid_name + '.npz')
         if not os.path.exists(file_path):
             logging.warning(f"Missing file: {file_path}")
             continue
         try:
-            vec = torch.load(file_path)
-            X.append(vec.numpy())
+            vec = np.load(file_path)["data"]
+            X.append(vec)
             y.append(label)
         except Exception as e:
             logging.warning(f"Failed to load {file_path}: {e}")
@@ -79,18 +79,18 @@ def main(args):
 
     try:
         classifiers = {
-            "RandomForest": (RandomForestClassifier(), {
-                'n_estimators': [100, 200],
-                'max_depth': [None, 10, 20]
-            }),
+            # "RandomForest": (RandomForestClassifier(), {
+            #     'n_estimators': [100, 200],
+            #     'max_depth': [None, 10, 20]
+            # }),
             "XGBoost": (XGBClassifier(use_label_encoder=False, eval_metric='mlogloss'), {
                 'n_estimators': [100, 200],
                 'max_depth': [3, 6]
             }),
             "NeuralNet": (MLPClassifier(max_iter=500), {
                 'hidden_layer_sizes': [(128,), (128, 64)],
-                'alpha': [1e-4, 1e-3],
-                'activation': ['relu', 'tanh']
+                'alpha': [1e-3],
+                'activation': ['tanh']
             })
         }
 

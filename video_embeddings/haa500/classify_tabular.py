@@ -11,7 +11,7 @@ from sklearn.ensemble import RandomForestClassifier
 from xgboost import XGBClassifier
 from sklearn.model_selection import GridSearchCV
 from sklearn.neural_network import MLPClassifier
-from sklearn.preprocessing import LabelEncoder
+from sklearn.preprocessing import LabelEncoder, StandardScaler
 import matplotlib.pyplot as plt
 
 # Setup logging
@@ -24,12 +24,12 @@ def load_split_ids(split_file):
 def load_data(split_ids, embedding_folder):
     X, y = [], []
     for file_id in split_ids:
-        file_path = os.path.join(embedding_folder, file_id + '.pt')
+        file_path = os.path.join(embedding_folder, file_id + '.npz')
         if not os.path.exists(file_path):
             logging.warning(f"Missing file: {file_path}")
             continue
-        vec = torch.load(file_path)
-        X.append(vec.numpy())
+        vec = np.load(file_path)['data'] # torch.load(file_path)
+        X.append(vec)
         y.append(file_id.split('_')[0])
     return np.array(X), np.array(y)
 
@@ -71,55 +71,64 @@ def main(args):
     y_val = label_encoder.transform(y_val)
     y_test = label_encoder.transform(y_test)
 
+    scaler = StandardScaler()
+    X_train = scaler.fit_transform(X_train.reshape(X_train.shape[0], -1))
+    X_val = scaler.transform(X_val.reshape(X_val.shape[0], -1))
+    X_test = scaler.transform(X_test.reshape(X_test.shape[0], -1))
+
     results = []
 
     try:
         # Random Forest
-        start = time.time()
-        rf, rf_best_params, rf_val_acc = tune_model(RandomForestClassifier(), {
-            'n_estimators': [100, 200],
-            'max_depth': [None, 10, 20],
-        }, X_train, y_train, X_val, y_val, "RandomForest")
-        train_time = time.time() - start
-
-        start = time.time()
-        rf_test_acc = evaluate_and_log(rf, X_test, y_test, args.output_path, "RandomForest")
-        test_time = time.time() - start
-
-        with open(os.path.join(args.output_path, "RandomForest_best_params.txt"), 'w') as f:
-            f.write(str(rf_best_params))
-
-        results.append(["RandomForest", train_time, test_time, rf_val_acc, rf_test_acc])
+        # start = time.time()
+        # rf, rf_best_params, rf_val_acc = tune_model(RandomForestClassifier(), {
+        #     'n_estimators': [100, 200],
+        #     'max_depth': [None, 10, 20],
+        # }, X_train, y_train, X_val, y_val, "RandomForest")
+        # train_time = time.time() - start
+        #
+        # start = time.time()
+        # rf_test_acc = evaluate_and_log(rf, X_test, y_test, args.output_path, "RandomForest")
+        # test_time = time.time() - start
+        #
+        # with open(os.path.join(args.output_path, "RandomForest_best_params.txt"), 'w') as f:
+        #     f.write(str(rf_best_params))
+        #
+        # results.append(["RandomForest", train_time, test_time, rf_val_acc, rf_test_acc])
 
         # XGBoost
-        start = time.time()
-        xgb, xgb_best_params, xgb_val_acc = tune_model(XGBClassifier(use_label_encoder=False, eval_metric='mlogloss'), {
-            'n_estimators': [100, 200],
-            'max_depth': [3, 6],
-        }, X_train, y_train, X_val, y_val, "XGBoost")
-        train_time = time.time() - start
+        # start = time.time()
+        # xgb, xgb_best_params, xgb_val_acc = tune_model(XGBClassifier(use_label_encoder=False, eval_metric='mlogloss'), {
+        #     'n_estimators': [100, 200],
+        #     'max_depth': [3, 6],
+        # }, X_train, y_train, X_val, y_val, "XGBoost")
+        # train_time = time.time() - start
+        #
+        # start = time.time()
+        # xgb_test_acc = evaluate_and_log(xgb, X_test, y_test, args.output_path, "XGBoost")
+        # test_time = time.time() - start
+        #
+        # with open(os.path.join(args.output_path, "XGBoost_best_params.txt"), 'w') as f:
+        #     f.write(str(xgb_best_params))
+        #
+        # results.append(["XGBoost", train_time, test_time, xgb_val_acc, xgb_test_acc])
 
-        start = time.time()
-        xgb_test_acc = evaluate_and_log(xgb, X_test, y_test, args.output_path, "XGBoost")
-        test_time = time.time() - start
-
-        with open(os.path.join(args.output_path, "XGBoost_best_params.txt"), 'w') as f:
-            f.write(str(xgb_best_params))
-
-        results.append(["XGBoost", train_time, test_time, xgb_val_acc, xgb_test_acc])
 
         # Neural Network
         start = time.time()
         nn, nn_best_params, nn_val_acc = tune_model(MLPClassifier(max_iter=500), {
-            'hidden_layer_sizes': [(128,), (128, 64)],
-            'alpha': [1e-4, 1e-3],
-            'activation': ['relu', 'tanh']
+            'hidden_layer_sizes': [(128,)],
+            'alpha': [1e-3],
+            'activation': ['tanh']
         }, X_train, y_train, X_val, y_val, "NeuralNet")
         train_time = time.time() - start
 
         start = time.time()
         nn_test_acc = evaluate_and_log(nn, X_test, y_test, args.output_path, "NeuralNet")
         test_time = time.time() - start
+
+        logging.info(f"Final Val Accuracy: {nn_val_acc:.4f}")
+        logging.info(f"Final Test Accuracy: {nn_test_acc:.4f}")
 
         with open(os.path.join(args.output_path, "NeuralNet_best_params.txt"), 'w') as f:
             f.write(str(nn_best_params))
